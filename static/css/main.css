@@ -1,0 +1,15 @@
+:root {
+    --color-white-100: #fff;
+    --color-black-900: #000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* word-wrap: break-word; */
+}
+
+body {
+    font-family: "name", Helvetica, Arial, sans-serif;
+}

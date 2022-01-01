@@ -1,0 +1,49 @@
+.container {
+    width: 65rem;
+    max-width: 100%;
+    margin: 0 auto;
+    /* Temp: */
+    border: 1px solid yellow;
+}
+
+header {
+    height: 80vh;
+    background-color: black;
+    background-image: url("../media/images/header/Gentse-feesten-03.jpg");
+    background-position: 35% 50%;
+    background-size: cover;
+}
+
+#header__background {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+#header__background__logo {
+    width: 20rem;
+    height: 10rem;
+    background-image: url("../media/images/icons/logo.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: contain;
+}
+
+#header__background__search {
+    display: flex;
+}
+
+.btn_search {
+    width: 4.5rem;
+    height: 2.5rem;
+    border: none;
+    background-color: var(--color-black-900);
+    background-image: url("../media/images/icons/search.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+}
+
+.search_input {
+    height: 2.5rem;
+}
