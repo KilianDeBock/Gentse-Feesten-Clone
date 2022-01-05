@@ -14,6 +14,14 @@ header {
     background-size: cover;
 }
 
+.header_group {
+    display: flex;
+}
+
+.header_group > * {
+    margin-left: 4rem
+}
+
 #header__background {
     display: flex;
     justify-content: space-between;
