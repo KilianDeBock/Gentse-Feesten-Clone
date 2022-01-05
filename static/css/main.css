@@ -1,6 +1,7 @@
 :root {
     --color-white-100: #fff;
     --color-black-900: #000;
+    --color-gray-010: rgba(129, 145, 154, 0.4);
 }
 
 * {
@@ -12,4 +13,14 @@
 
 body {
     font-family: "name", Helvetica, Arial, sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: .1rem;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background: var(--color-white-100);
 }

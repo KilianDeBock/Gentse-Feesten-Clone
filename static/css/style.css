@@ -57,6 +57,8 @@ header {
 .hamburger {
     width: 4rem;
     height: 4rem;
+    border: unset;
+    background-color: unset;
     background-image: url("../media/images/icons/hamburger.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -67,7 +69,7 @@ header {
     z-index: 100;
     right: 0;
     order: 100;
-    transition: transform .2s ease-in-out;
+    transition: transform .3s ease-in-out;
     background-image: url("../media/images/icons/cross.svg");
 }
 
@@ -75,13 +77,83 @@ header {
     transform: rotate(180deg);
 }
 
+.header__navigation__mobile_content ul {
+    list-style: none;
+}
+
+.header__navigation__mobile_content span,
+.header__navigation__mobile_content a,
+.header__navigation__mobile_content button {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    border: none;
+    background-color: unset;
+}
+
+
+.header__navigation__mobile_content span:hover,
+.header__navigation__mobile_content a:hover,
+.header__navigation__mobile_content button:hover {
+    text-decoration: underline;
+}
+
+
 .header__navigation__mobile_content {
+    font-size: 2rem;
     position: fixed;
     top: 0;
     left: 0;
+    overflow-y: scroll;
     width: 100%;
     height: 100vh;
+    padding-left: 2rem;
     background-color: var(--color-black-900);
+}
+
+.header__navigation__mobile_content > ul > * {
+    margin: 2rem 0;
+}
+
+#hamburger_program button {
+    display: flex;
+}
+
+#hamburger_program button .arrow {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1rem;
+    transition: transform .2s ease-in-out;
+    background-image: url("../media/images/icons/chevron-down.svg");
+    background-size: cover;
+}
+
+#hamburger_program.close button .arrow {
+    transform: rotate(180deg);
+}
+
+#hamburger_program > ul * {
+    font-weight: normal;
+    margin: 2rem 0;
+}
+
+#hamburger_program > ul {
+    overflow: hidden;
+    max-height: 100vh;
+    padding-left: 3rem;
+    transition: max-height .5s ease-in-out, margin .6s ease-in-out;
+    border-left: .4rem solid var(--color-white-100);
+}
+
+#hamburger_program:not(.close) > ul {
+    margin: 2rem 0;
+    transition: max-height .5s ease-in-out;
+}
+
+#hamburger_program.close > *:not(button) {
+    max-height: 0;
 }
 
 
