@@ -1,33 +1,3 @@
-@font-face {
-    font-family: "Raleway";
-    src: url("../fonts/Raleway Regular.woff2") format("woff2"),
-    url("../fonts/Raleway Regular.woff") format("woff");
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "Raleway";
-    src: url("../fonts/Raleway Italic.woff2") format("woff2"),
-    url("../fonts/Raleway Italic.woff") format("woff");
-    font-weight: 400;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Raleway";
-    src: url("../fonts/Raleway Bold.woff2") format("woff2"),
-    url("../fonts/Raleway Bold.woff") format("woff");
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: "Raleway";
-    src: url("../fonts/Raleway Bold Italic.woff2") format("woff2"),
-    url("../fonts/Raleway Bold Italic.woff") format("woff");
-    font-weight: 700;
-    font-style: italic;
-}
-
 :root {
     --color-white-100: #fff;
     --color-black-900: #000;
@@ -40,11 +10,6 @@
     padding: 0;
     /* word-wrap: break-word; */
 }
-
-body {
-    font-family: "Raleway", Helvetica, Arial, sans-serif;
-}
-
 
 header {
     background-color: black;

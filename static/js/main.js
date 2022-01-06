@@ -3,7 +3,7 @@
     initialize() {
       this.cacheElements();
       this.addEventListeners();
-      this.generateUI();
+      this.setRandomHeaderBackground();
     },
     cacheElements() {
       this.$elements = document.querySelectorAll('selector');
@@ -21,10 +21,11 @@
         this.$hamburgerProgram.classList.toggle('close');
       });
     },
-    generateUI() {
+    setRandomHeaderBackground() {
       const randomNumberBetween1And9 = Math.floor(Math.random() * 9) + 1;
       this.$header.classList.add(`header_${randomNumberBetween1And9}`);
     }
+
   };
   // Start initialization.
   app.initialize();
