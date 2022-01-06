@@ -7,6 +7,7 @@
     },
     cacheElements() {
       this.$elements = document.querySelectorAll('selector');
+      this.$header = document.querySelector('#header');
       this.$hamburger = document.querySelector('.hamburger');
       this.$hamburgerContent = document.querySelector('.header__navigation__mobile_content');
       this.$hamburgerProgram = document.querySelector('#hamburger_program');
@@ -21,6 +22,8 @@
       });
     },
     generateUI() {
+      const randomNumberBetween1And9 = Math.floor(Math.random() * 9) + 1;
+      this.$header.classList.add(`header_${randomNumberBetween1And9}`);
     }
   };
   // Start initialization.

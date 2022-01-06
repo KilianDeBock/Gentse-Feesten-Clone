@@ -1,0 +1,411 @@
+/* Header */
+#header__background {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0 1.5rem;
+}
+
+#header__background__logo {
+    width: 15rem;
+    max-width: 100%;
+    height: 5rem;
+    background-image: url("../media/images/icons/logo.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: contain;
+}
+
+/* Desktop navigation */
+.header__navigation__desktop {
+    display: none;
+}
+
+/* Header: Mobile navigation. */
+.header__navigation__mobile_content ul {
+    list-style: none;
+}
+
+.header__navigation__mobile_content span,
+.header__navigation__mobile_content a,
+.header__navigation__mobile_content button {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    border: none;
+    background-color: unset;
+}
+
+
+.header__navigation__mobile_content span:hover,
+.header__navigation__mobile_content a:hover,
+.header__navigation__mobile_content button:hover {
+    text-decoration: underline;
+}
+
+
+.header__navigation__mobile_content {
+    font-size: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100vh;
+    padding-left: 2rem;
+    background-color: var(--color-black-900);
+}
+
+.header__navigation__mobile_content > ul > * {
+    margin: 2rem 0;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    width: 4rem;
+    height: 4rem;
+    border: unset;
+    background-color: unset;
+    background-image: url("../media/images/icons/hamburger.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hamburger.close {
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    order: 100;
+    transition: transform .3s ease-in-out;
+    background-image: url("../media/images/icons/cross.svg");
+}
+
+.hamburger.close:hover {
+    transform: rotate(180deg);
+}
+
+#hamburger_program > ul {
+    overflow: hidden;
+    max-height: 100vh;
+    padding-left: 3rem;
+    transition: max-height .5s ease-in-out, margin .6s ease-in-out;
+    border-left: .4rem solid var(--color-white-100);
+}
+
+#hamburger_program > ul * {
+    font-weight: normal;
+    margin: 2rem 0;
+}
+
+#hamburger_program:not(.close) > ul {
+    margin: 2rem 0;
+    transition: max-height .5s ease-in-out;
+}
+
+#hamburger_program.close > *:not(button) {
+    max-height: 0;
+}
+
+#hamburger_program button {
+    display: flex;
+}
+
+#hamburger_program button .arrow {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    transition: transform .2s ease-in-out;
+    background-image: url("../media/images/icons/arrow-down.svg");
+    background-size: cover;
+}
+
+
+#hamburger_program.close button .arrow {
+    transform: rotate(180deg);
+}
+
+/* Header: Find */
+#header__find {
+    padding: 1rem;
+    background-color: var(--color-white-100);
+}
+
+#header__find svg {
+    display: block;
+    max-width: 100%;
+    fill: var(--color-black-900)
+}
+
+#header__find #header__find__gf {
+    width: 7rem;
+}
+
+#header__find #header__find__find {
+    width: 20rem;
+}
+
+/* Header: Days buttons */
+#header__days ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    list-style: none;
+}
+
+#header__days li {
+    font-size: 4vw;
+    flex-grow: 1;
+    width: 20vw;
+    height: 20vw;
+    transition: background-color .2s ease-in-out;
+    text-align: center;
+    background-color: var(--color-black-900);
+}
+
+#header__days li:hover {
+    background-color: var(--color-white-100);
+}
+
+#header__days li:hover a {
+    color: var(--color-black-900);
+}
+
+#header__days a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: color .2s ease-in-out;
+    text-decoration: none;
+    color: var(--color-white-100)
+}
+
+#header__days span {
+    display: block;
+}
+
+#header__days .header__days__day {
+    font-weight: bold;
+    display: block;
+}
+
+
+@media (min-width: 47rem) {
+    #header__days li {
+        font-size: 2vw;
+        width: 10vw;
+        height: 10vw;
+    }
+}
+
+@media (min-width: 65rem) {
+    .header__navigation__mobile {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 30rem;
+        background-image: url("../media/images/header/Gentse-feesten-03.jpg");
+        background-position: 35% 50%;
+        background-size: cover;
+    }
+
+    header.header_1 {
+        background-image: url("../media/images/header/Gentse-feesten-01.jpg");
+    }
+
+    header.header_2 {
+        background-image: url("../media/images/header/Gentse-feesten-02.jpg");
+    }
+
+    header.header_4 {
+        background-image: url("../media/images/header/Gentse-feesten-04.jpg");
+    }
+
+    header.header_5 {
+        background-image: url("../media/images/header/Gentse-feesten-05.jpg");
+    }
+
+    header.header_6 {
+        background-image: url("../media/images/header/Gentse-feesten-06.jpg");
+    }
+
+    header.header_7 {
+        background-image: url("../media/images/header/Gentse-feesten-07.jpg");
+    }
+
+    header.header_8 {
+        background-image: url("../media/images/header/Gentse-feesten-08.jpg");
+    }
+
+    header.header_9 {
+        background-image: url("../media/images/header/Gentse-feesten-09.jpg");
+    }
+
+    #header__days,
+    #header__find {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    /* Find */
+    #header__find {
+        height: 8.5rem;
+        background-color: unset;
+    }
+
+    #header__find svg {
+        position: relative;
+        display: inline-block;
+        fill: var(--color-white-100)
+    }
+
+    #header__find #header__find__gf {
+        bottom: .7rem;
+        left: -5.3rem;
+        transform: rotate(-90deg);
+    }
+
+    #header__find #header__find__find {
+        bottom: -.5rem;
+        left: -6.5rem;
+    }
+
+    #header__days ul {
+        width: 30rem;
+        margin: 0 1rem 2rem;
+    }
+
+    #header__days li {
+        font-size: 1rem;
+        width: 6rem;
+        height: 5rem;
+        background-color: var(--color-white-100);
+    }
+
+    #header__days a {
+        color: var(--color-black-900);
+    }
+
+    #header__days li:hover {
+        background-color: var(--color-black-900);
+    }
+
+    #header__days li:hover a {
+        color: var(--color-white-100);
+    }
+
+    /* Activate desktop mode */
+    .header__navigation__desktop {
+        display: unset;
+    }
+
+    .header_group {
+        display: flex;
+    }
+
+    .header_group > *:not(:first-child) {
+        margin-left: 2rem
+    }
+
+    #header__background__search {
+        display: flex;
+    }
+
+    .search_input {
+        width: 17rem;
+        height: 2.5rem;
+        padding: 1rem
+    }
+
+    #header__language-selector {
+        height: 2.5rem;
+        padding: .8rem;
+        color: white;
+        border: none;
+        background-color: black;
+    }
+
+    .btn_search {
+        width: 4.5rem;
+        height: 2.5rem;
+        border: none;
+        background-color: var(--color-black-900);
+        background-image: url("../media/images/icons/search.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 40%;
+    }
+
+    #main-navigation ul {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 1.5rem;
+        list-style: none;
+    }
+
+    #main-navigation li {
+        margin-left: 2rem;
+    }
+
+    #main-navigation a {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--color-white-100);
+    }
+
+    #main-navigation .underline {
+        display: block;
+        width: 0;
+        height: .2rem;
+        margin: .4rem auto 0;
+        transition: background-color .2s ease-in-out, width .2s ease-in-out;
+    }
+
+    #main-navigation li:hover .underline,
+    #main-navigation .underline.active {
+        width: 2rem;
+        background-color: var(--color-white-100);
+    }
+}
+
+
+@media (min-width: 65rem) and (min-height: 55rem) {
+    #header__days ul {
+        width: 12rem;
+        margin: 0 1rem 2rem;
+    }
+
+    #header__find #header__find__gf {
+        left: 1rem;
+    }
+
+    #header__find #header__find__find {
+        left: -.2rem;
+    }
+}
+
+
+@media (min-width: 65rem) and (min-height: 38rem) {
+    header {
+        height: 80vh;
+    }
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: .1rem;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background: var(--color-white-100);
+}
