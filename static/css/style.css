@@ -7,6 +7,14 @@
     animation-duration: 5s;
 }
 
+.container:not(.x) {
+    padding: 0 1rem
+}
+
+main .container {
+    margin-top: 3rem;
+}
+
 @keyframes container {
     0% {
         border: 1px solid yellow;

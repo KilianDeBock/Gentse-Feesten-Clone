@@ -28,12 +28,32 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway Black.woff2") format("woff2"),
+    url("../fonts/Raleway Black.woff") format("woff");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway Black Italic.woff2") format("woff2"),
+    url("../fonts/Raleway Black Italic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+}
+
 body {
     font-family: "Raleway", Helvetica, Arial, sans-serif;
     color: var(--color-black-900);
 }
 
-a {
+a.x {
+    text-decoration: none;
+    color: var(--color-black-900);
+}
+
+a:not(.x) {
     transition: background .3s ease-in-out;
     background-image: linear-gradient(to right, var(--color-gray-010) 0, var(--color-gray-010) 100%);
     background-repeat: no-repeat;
@@ -43,4 +63,12 @@ a {
 
 a:hover:not(.x) {
     background-size: 100% 50%;
+}
+
+.txt__bold {
+    font-weight: bold;
+}
+
+.txt__bold-black {
+    font-weight: 900;
 }
