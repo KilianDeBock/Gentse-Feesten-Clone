@@ -15,6 +15,10 @@ header {
     background-color: black;
 }
 
+img {
+    max-width: 100%;
+}
+
 #events {
     display: flex;
     flex-wrap: wrap;
@@ -57,13 +61,13 @@ header {
 }
 
 #news li:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
 }
 
 #news a {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 3rem;
 }
 
 #news .news__image__wrapper {
@@ -100,6 +104,47 @@ header {
 #news .news__wrapper {
     flex-grow: 10;
     width: 20rem;
+}
+
+#news .news__synopsis {
+    display: block;
+    margin: 1rem 0 1.5rem;
+}
+
+#news .news__title {
+    font-size: 1.9rem;
+}
+
+#news .news__more {
+    font-weight: bold;
+    display: inline-block;
+    padding: 1rem 2rem;
+    transition: color .2s ease-in-out, background-color .2s ease-in-out;
+    border: .2rem solid var(--color-black-900);
+    background-color: var(--color-white-100);
+}
+
+#news .news__more:hover {
+    color: var(--color-white-100);
+    background-color: var(--color-black-900);
+}
+
+#highlights__pages {
+    font-size: 1.3rem;
+    font-weight: bold;
+    position: relative;
+    bottom: 3rem;
+    left: 50%;
+    display: inline-block;
+    padding: .8rem 1.5rem;
+    transform: translateX(-50%);
+    background-color: var(--color-white-100);
+}
+
+#highlights__pages button.arrow {
+    position: relative;
+    top: .15rem;
+    margin-right: 1rem;
 }
 
 /* Scrollbar */

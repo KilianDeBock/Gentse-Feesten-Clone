@@ -23,7 +23,7 @@
     },
     setRandomHeaderBackground() {
       const randomNumberBetween1And9 = Math.floor(Math.random() * 9) + 1;
-      this.$header.classList.add(`header_${randomNumberBetween1And9}`);
+      this.$header.style.backgroundImage = `url("static/media/images/header/Gentse-feesten-0${randomNumberBetween1And9}.jpg")`;
     }
 
   };

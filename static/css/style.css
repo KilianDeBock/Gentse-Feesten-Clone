@@ -12,7 +12,7 @@
 }
 
 main .container {
-    margin-top: 3rem;
+    margin-top: 4rem;
 }
 
 @keyframes container {
@@ -36,4 +36,30 @@ main .container {
 
 .hidden {
     display: none;
+}
+
+.arrow {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+    border: none;
+    background-color: unset;
+    background-image: url("../media/images/icons/arrow-right.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.arrow-left {
+    transform: rotate(180deg);
+}
+
+.arrow:not(.arrow-left):hover,
+#news li:hover .arrow {
+    transform: rotate(-10deg) translateX(.5rem);
+}
+
+.arrow.arrow-left:hover {
+    transform: rotate(190deg) translateX(.5rem);
 }

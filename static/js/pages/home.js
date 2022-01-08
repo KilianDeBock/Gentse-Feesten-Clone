@@ -76,14 +76,18 @@
               <span class="news__date">${date}</span>
             </div>
             <div class="news__wrapper">
-              <h3 class="txt__bold-black">${news.title}</h3>
+              <h3 class="news__title txt__bold-black">${news.title}</h3>
               <span class="news__synopsis">${news.synopsis}</span>
-              <span class="news__arrow"></span>
+              <button class="arrow arrow-right"></button>
             </div>
           </a>
         </li>
       `;
-      }).join('');
+      }).join('') + `
+        <li>
+            <button class="news__more">Bekijk alle nieuwsberichten</button>
+        </li>
+      `;
     }
   };
   // Start initialization.

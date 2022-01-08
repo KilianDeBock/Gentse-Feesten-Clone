@@ -216,38 +216,6 @@
         background-size: cover;
     }
 
-    header.header_1 {
-        background-image: url("../media/images/header/Gentse-feesten-01.jpg");
-    }
-
-    header.header_2 {
-        background-image: url("../media/images/header/Gentse-feesten-02.jpg");
-    }
-
-    header.header_4 {
-        background-image: url("../media/images/header/Gentse-feesten-04.jpg");
-    }
-
-    header.header_5 {
-        background-image: url("../media/images/header/Gentse-feesten-05.jpg");
-    }
-
-    header.header_6 {
-        background-image: url("../media/images/header/Gentse-feesten-06.jpg");
-    }
-
-    header.header_7 {
-        background-image: url("../media/images/header/Gentse-feesten-07.jpg");
-    }
-
-    header.header_8 {
-        background-image: url("../media/images/header/Gentse-feesten-08.jpg");
-    }
-
-    header.header_9 {
-        background-image: url("../media/images/header/Gentse-feesten-09.jpg");
-    }
-
     #header__days,
     #header__find {
         display: flex;
