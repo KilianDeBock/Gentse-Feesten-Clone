@@ -16,6 +16,7 @@
       this.$hamburger.addEventListener('click', () => {
         this.$hamburger.classList.toggle('close');
         this.$hamburgerContent.classList.toggle('hidden');
+        document.body.classList.toggle('no-scroll');
       });
       this.$hamburgerProgram.addEventListener('click', (ev) => {
         this.$hamburgerProgram.classList.toggle('close');

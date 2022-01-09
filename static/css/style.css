@@ -11,7 +11,8 @@
     padding: 0 1rem
 }
 
-main .container {
+main .container,
+footer .container {
     margin-top: 4rem;
 }
 
@@ -36,6 +37,10 @@ main .container {
 
 .hidden {
     display: none;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 .arrow {

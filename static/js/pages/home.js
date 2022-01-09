@@ -41,7 +41,7 @@
                 </span>
                 ${event.start} u.
               </span>
-              <h3 class="txt__bold-black">${event.title}</h3>
+              <h4>${event.title}</h4>
               <span class="event__location">${event.location}</span>
             </div>
           </a>

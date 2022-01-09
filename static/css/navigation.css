@@ -47,6 +47,7 @@
 .header__navigation__mobile_content {
     font-size: 2rem;
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     overflow-y: scroll;
@@ -365,15 +366,4 @@
     header {
         height: 80vh;
     }
-}
-
-
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: .1rem;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: .5rem;
-    background: var(--color-white-100);
 }

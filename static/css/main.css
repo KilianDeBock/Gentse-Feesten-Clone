@@ -1,7 +1,8 @@
 :root {
     --color-white-100: #fff;
     --color-black-900: #000;
-    --color-gray-010: rgba(129, 145, 154, 0.4);
+    --color-gray-810: rgba(129, 145, 154, 0.4);
+    --color-gray-200: #e9e9e9;
 }
 
 * {
@@ -17,6 +18,11 @@ header {
 
 img {
     max-width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 #events {
@@ -91,6 +97,10 @@ img {
     transform: scale(1.1);
 }
 
+#news li:hover h3 {
+    text-decoration: underline;
+}
+
 #news .news__date {
     font-weight: bold;
     position: absolute;
@@ -129,11 +139,15 @@ img {
     background-color: var(--color-black-900);
 }
 
+#highlights {
+    position: relative;
+}
+
 #highlights__pages {
     font-size: 1.3rem;
     font-weight: bold;
-    position: relative;
-    bottom: 3rem;
+    position: absolute;
+    bottom: 0;
     left: 50%;
     display: inline-block;
     padding: .8rem 1.5rem;
@@ -141,18 +155,87 @@ img {
     background-color: var(--color-white-100);
 }
 
-#highlights__pages button.arrow {
+#highlights__pages .arrow {
     position: relative;
     top: .15rem;
     margin-right: 1rem;
 }
 
+#stay-in-touch {
+    padding-top: 1.5rem;
+}
+
+#stay-in-touch label {
+    font-size: .9rem;
+    padding-bottom: .4rem;
+}
+
+#stay-in-touch .wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#stay-in-touch .wrapper * {
+    padding: .7rem 1.8rem;
+    border: none;
+}
+
+#stay-in-touch input {
+    width: 100%;
+    background-color: var(--color-gray-200);
+}
+
+#stay-in-touch button {
+    font-weight: bold;
+    color: var(--color-white-100);
+    border: .2rem solid var(--color-black-900);
+    background-color: var(--color-black-900);
+}
+
+#footer {
+    width: 100%;
+    height: 60vh;
+    color: var(--color-white-100);
+    background-image: url("../media/images/header/Gentse-feesten-01.jpg");
+    background-repeat: no-repeat;
+    background-position: 38% 50%;
+    background-size: cover;
+}
+
+#footer__items > *:not(:first-child) {
+    margin-top: 2rem;
+}
+
+#footer__logo {
+    width: 20rem;
+    max-width: 100%;
+    padding: 2rem;
+    background-color: var(--color-white-100);
+}
+
+#footer__socials a:not(:last-child) {
+    margin-right: .5rem;
+}
+
+#footer__socials svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: .05rem;
+    transition: all .2s ease-in-out;
+    border-radius: 50%;
+    background-color: var(--color-white-100);
+}
+
+#footer__socials svg:hover {
+    background-color: var(--color-black-900);
+    fill: var(--color-white-100);
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
-    width: .1rem;
+    width: .3rem;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: .5rem;
-    background: var(--color-white-100);
+    background: var(--color-black-900);
 }
