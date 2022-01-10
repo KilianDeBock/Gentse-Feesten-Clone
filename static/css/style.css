@@ -18,6 +18,12 @@ footer .container {
 
 @keyframes container {
     0% {
+        border: 1px solid blue;
+    }
+    35% {
+        border: 1px solid red;
+    }
+    75% {
         border: 1px solid yellow;
     }
     100% {

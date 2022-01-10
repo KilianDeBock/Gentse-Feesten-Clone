@@ -26,7 +26,9 @@
         this.randomEvents.push(randomEvent);
       }
 
-      this.setRandomEvents();
+      const randomUniqueEventsIds = [...new Set(this.randomEvents.map(ev => ev.id))];
+
+      randomUniqueEventsIds.length < 3 ? this.getRandomEvents() : this.setRandomEvents();
     },
     setRandomEvents() {
       this.$events.innerHTML = this.randomEvents.map(event => `
