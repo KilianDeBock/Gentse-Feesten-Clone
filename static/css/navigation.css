@@ -15,8 +15,13 @@
 
 @media (min-width: 65rem) and (min-height: 38rem) {
     header {
-        height: 80vh;
-        max-height: 60rem;
+        height: 90vh;
+        max-height: 65rem;
+    }
+
+    header.short-version {
+        height: 70vh;
+        max-height: 45rem;
     }
 }
 
@@ -39,6 +44,7 @@ header .logo {
 /* Desktop navigation */
 .navigation__desktop {
     display: none;
+    padding-right: 1rem;
 }
 
 @media (min-width: 65rem) {
@@ -206,6 +212,10 @@ header .find {
     background-color: var(--color-white-100);
 }
 
+header.short-version .find {
+    position: relative;
+}
+
 @media (min-width: 65rem) {
     /* Find */
     header .find {
@@ -233,10 +243,16 @@ header .find .svg_gentse-feesten {
 }
 
 @media (min-width: 65rem) {
-    header .find .svg_gentse-feesten {
+    header:not(.short-version) .find .svg_gentse-feesten {
         bottom: .7rem;
         left: -5.3rem;
         transform: rotate(-90deg);
+    }
+
+    header.short-version .find .svg_gentse-feesten {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
     }
 }
 
@@ -245,19 +261,25 @@ header .find .svg_find-out {
 }
 
 @media (min-width: 65rem) {
-    header .find .svg_find-out {
+    header:not(.short-version) .find .svg_find-out {
         bottom: -.5rem;
         left: -6.5rem;
+    }
+
+    header.short-version .find .svg_find-out {
+        position: absolute;
+        right: 1rem;
+        bottom: 3.5rem;
     }
 }
 
 
 @media (min-width: 65rem) and (min-height: 55rem) {
-    header .find .svg_gentse-feesten {
+    header:not(.short-version) .find .svg_gentse-feesten {
         left: 1rem;
     }
 
-    header .find .svg_find-out {
+    header:not(.short-version) .find .svg_find-out {
         left: -.2rem;
     }
 }
@@ -326,14 +348,6 @@ header .days li {
     }
 }
 
-
-@media (min-width: 65rem) and (min-height: 55rem) {
-    header .days ul {
-        width: 12rem;
-        margin: 0 1rem 2rem;
-    }
-}
-
 header .days li:hover {
     background-color: var(--color-white-100);
 }
@@ -343,24 +357,35 @@ header .days li:hover a {
 }
 
 @media (min-width: 65rem) {
-    header .days ul {
+    header .days:not(.short-version) ul {
         width: 30rem;
         margin: 0 1rem 2rem;
     }
 
-    header .days li {
+    header .days.short-version li,
+    header .days:not(.short-version) li {
         font-size: 1rem;
         width: 6rem;
         height: 5rem;
+    }
+
+    header .days:not(.short-version) li {
         background-color: var(--color-white-100);
     }
 
-    header .days li:hover {
+    header .days:not(.short-version) li:hover {
         background-color: var(--color-black-900);
     }
 
-    header .days li:hover a {
+    header .days:not(.short-version) li:hover a {
         color: var(--color-white-100);
+    }
+}
+
+@media (min-width: 65rem) and (min-height: 55rem) {
+    header .days:not(.short-version) ul {
+        width: 12rem;
+        margin: 0 1rem 2rem;
     }
 }
 
@@ -376,8 +401,12 @@ header .days a {
     color: var(--color-white-100)
 }
 
+header .days.short-version {
+    padding: 0 -1rem;
+}
+
 @media (min-width: 65rem) {
-    header .days a {
+    header .days:not(.short-version) a {
         color: var(--color-black-900);
     }
 }
