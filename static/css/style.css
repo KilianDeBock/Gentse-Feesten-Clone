@@ -45,8 +45,10 @@ footer .container {
     display: none;
 }
 
-.no-scroll {
-    overflow: hidden;
+@media (max-width: 65rem) {
+    .no-scroll {
+        overflow: hidden;
+    }
 }
 
 .arrow {

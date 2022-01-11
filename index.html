@@ -30,12 +30,12 @@
 </head>
 
 <body>
-<header id="header">
-    <section class="container x" id="header__background">
-        <div id="header__background__logo"></div>
-        <div class="header__navigation__mobile">
+<header>
+    <section class="background container x">
+        <div class="logo"></div>
+        <div class="navigation__mobile">
             <button class="hamburger open"></button>
-            <nav class="header__navigation__mobile_content hidden">
+            <nav class="content hidden">
                 <ul>
                     <li>
                         <a class="x" href="index.html">Home</a>
@@ -43,8 +43,8 @@
                     <li>
                         <a class="x" href="events/search.html">Zoeken</a>
                     </li>
-                    <li class="close" id="hamburger_program">
-                        <button>Programma<span class="arrow"></span></button>
+                    <li class="program close">
+                        <button>Programma<span class="short-arrow"></span></button>
                         <ul>
                             <li>
                                 <a class="x" href="events/day.html?day=19">
@@ -107,18 +107,18 @@
                 </ul>
             </nav>
         </div>
-        <div class="header__navigation__desktop">
+        <div class="navigation__desktop">
             <div class="header_group">
-                <form id="header__background__search">
-                    <input class="search_input" id="header__background__search__input" name="search" placeholder="Doorzoek het programma..." type="search">
-                    <button class="btn_search" id="header__background__search__submit"></button>
+                <form class="search-form">
+                    <input class="search_input" name="search" placeholder="Doorzoek het programma..." type="search">
+                    <button class="btn_search"></button>
                 </form>
-                <select id="header__language-selector" name="language">
+                <select class="language-selector" name="language">
                     <option value="NL">NL</option>
                     <option value="EN">EN</option>
                 </select>
             </div>
-            <nav id="main-navigation">
+            <nav class="main-navigation">
                 <ul>
                     <li>
                         <a class="x main-navigation__item" href="index.html">Home</a>
@@ -141,8 +141,8 @@
         </div>
     </section>
     <div class="wrapper">
-        <section class="container x" id="header__find">
-            <svg id="header__find__gf" viewBox="0 0 107 26" xmlns="http://www.w3.org/2000/svg">
+        <section class="find container x">
+            <svg class="svg_gentse-feesten" viewBox="0 0 107 26" xmlns="http://www.w3.org/2000/svg">
                 <g>
                     <path d="m1.4323 25.936 1.5189-7.2879h-2.9512v-2.5486h3.4744l1.293-6.2109h-4.7675v-2.5486h5.2907l1.5189-7.3395h2.6199l-1.5189 7.3395h5.4997l1.5188-7.3395h2.6369l-1.5189 7.3395h3.0209v2.5486h-3.5441l-1.31 6.2109h4.8541v2.5486h-5.3792l-1.5189 7.2879h-2.618l1.5019-7.2879h-5.4845l-1.5189 7.2879h-2.6181zm4.6621-9.8365h5.4827l1.3099-6.2109h-5.5015l-1.2912 6.2109z" id="Shape"/>
                     <path d="m21.346 13.246c0-7.5332 5.686-12.754 12.552-12.754 6.3654 0 9.9772 3.644 11.265 7.358l-3.6476 1.4366c-1.2158-3.2235-3.4688-5.536-7.6885-5.536-4.3986 0-8.6541 3.2235-8.6541 9.4603 0 6.0966 3.5045 9.6004 8.511 9.6004 4.8277 0 7.5098-3.2235 7.7243-6.1667h-8.654v-3.2235h12.337v12.088h-3.4688c0-1.8921 0.7152-3.8542 1.3947-5.2207h-1.6808c-0.6794 1.822-2.8251 5.7112-8.6898 5.7112-6.6157 0.0019-11.3-4.9053-11.3-12.754z" id="a"/>
@@ -151,7 +151,7 @@
                 </g>
             </svg>
 
-            <svg id="header__find__find" viewBox="0 0 476.5 100.2" xmlns="http://www.w3.org/2000/svg">
+            <svg class="svg_find-out" viewBox="0 0 476.5 100.2" xmlns="http://www.w3.org/2000/svg">
                 <path class="st0" d="M0,63c0-22.4,15.4-37.1,36.8-37.1S73.6,40.6,73.6,63c0,22.8-15.4,37.2-36.8,37.2S0,84.6,0,63z M52.9,63.3    c0-14.4-6.6-21.7-16.1-21.7s-16.1,7.3-16.1,21.7s6.6,21.1,16.1,21.1S52.9,77.7,52.9,63.3z"/>
                 <path class="st0" d="M88.2,28h17.9c-0.1,4.6-3.1,10.6-6.9,16.1h8.7c3.2-9.9,10.2-18.2,21.4-18.2c15.4,0,23.8,10.2,23.8,25.8V98    h-19.9V55.4c0-9.2-4.3-13.2-11.2-13.2c-13.9,0-14,15.1-14,22.5V98H88.2V28z"/>
                 <path class="st0" d="M178.9,79.7V43.1h-14.7V28h14.7V6h19.9v22H217v15.1h-18.2V76c0,4.2,1.8,6.2,6.2,6.2h15.1V98h-23.4    C185.4,98,178.9,90.6,178.9,79.7z"/>
@@ -161,7 +161,7 @@
             </svg>
 
         </section>
-        <section class="container x" id="header__days">
+        <section class="days container x">
             <ul>
                 <li>
                     <a class="x" href="events/day.html?day=19">
@@ -252,9 +252,9 @@
     </section>
 </main>
 
-<footer id="footer">
-    <section id="footer__items" class="container">
-        <div id="footer__logo">
+<footer>
+    <section class="items container">
+        <div class="logo">
             <svg viewBox="0 0 414 164" xmlns="http://www.w3.org/2000/svg">
                     <g stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".26">
                         <path d="M49.18.13c18 0 30 8.06 30.54 20.11H69.18c-.59-7.1-7.91-11.31-19.82-11.31-12.5 0-20.85 7-20.85 18.26 0 11.26 8.23 18.19 20.67 18.19 11.24 0 19.82-4.59 21.08-12.28H41.41v-7.69h39.12v27.66h-8.58l.74-12h-.67c-4.73 9.69-13.68 13.16-23.07 13.16-18.63 0-31-10.8-31-27.06C17.95 10.91 30.38.13 49.18.13zM91.45 1.31h49.91v8.8h-39.41v11.31H137v8.13h-35.05v14.64h39.41v8.87H91.45zM152.23 1.31h9.54l38.75 37.27V1.31h10.5v51.76h-9.61L162.74 15.8v37.27h-10.5V1.31zM240.81 10.11h-22.92v-8.8h56.42v8.8h-23v42.96h-10.5zM276.97 36.43h10.94c-.07 5.4 6.51 9 17.3 9 12.2 0 18.93-2.22 18.93-7.1 0-14-45.77 2.22-45.77-21.81 0-10.57 11.17-16.34 27.21-16.34 16.86 0 28 7.1 28 17.82h-10.69c0-5.47-6.51-9-17-9-10.72 0-16.86 2.22-16.86 6.66 0 13 45.7-2.07 45.7 22.26 0 10.8-11.46 16.42-29.06 16.42-17.6 0-28.85-7.33-28.7-17.91zM343.88 1.31h49.91v8.8h-39.41v11.31h35.05v8.13h-35.05v14.64h39.41v8.87h-49.91zM.13 70.11H47.6v8.8H10.63v11.68h33.35v8.13H10.63v23.15H.13zM56.18 70.11h49.91v8.8H66.68v11.31h35.05v8.13H66.68v14.64h39.41v8.87H56.18zM116.22 70.11h49.91v8.8h-39.41v11.31h35.05v8.13h-35.05v14.64h39.41v8.87h-49.91zM173.38 105.24h10.94c-.07 5.4 6.51 9 17.3 9 12.2 0 18.93-2.22 18.93-7.1 0-14-45.77 2.22-45.77-21.81 0-10.57 11.17-16.34 27.21-16.34 16.86 0 27.95 7.1 28 17.82H219.3c0-5.47-6.51-9-17-9-10.72 0-16.86 2.22-16.86 6.66 0 13 45.7-2.07 45.7 22.26 0 10.8-11.46 16.42-29.06 16.42-17.6 0-28.85-7.34-28.7-17.91zM254.94 78.91h-22.92v-8.8h56.42v8.8h-23v42.96h-10.5zM294.49 70.11h49.91v8.8h-39.41v11.31h35.05v8.13h-35.05v14.64h39.41v8.87h-49.91zM354.53 70.11h9.54l38.75 37.27V70.11h10.5v51.76h-9.61l-38.68-37.26v37.27h-10.5z"/>
@@ -263,9 +263,9 @@
                 </g>
             </svg>
         </div>
-        <div id="footer__content">
+        <div class="content">
             <h4>Volg de Gentse Feesten op alle sociale media kanalen</h4>
-            <div id="footer__socials">
+            <div class="socials">
                 <a class="x" href="https://www.twitter.com/GFGent">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                         <title>twitter</title>

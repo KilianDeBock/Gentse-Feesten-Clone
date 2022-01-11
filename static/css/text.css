@@ -84,7 +84,7 @@ a {
 }
 
 /* Links */
-a.x:not(#header a) {
+a.x:not(header a) {
     text-decoration: none;
     color: var(--color-black-900)
 }

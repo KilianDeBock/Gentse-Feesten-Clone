@@ -6,11 +6,10 @@
       this.setRandomHeaderBackground();
     },
     cacheElements() {
-      this.$elements = document.querySelectorAll('selector');
-      this.$header = document.querySelector('#header');
+      this.$header = document.querySelector('header');
       this.$hamburger = document.querySelector('.hamburger');
-      this.$hamburgerContent = document.querySelector('.header__navigation__mobile_content');
-      this.$hamburgerProgram = document.querySelector('#hamburger_program');
+      this.$hamburgerContent = document.querySelector('.navigation__mobile .content');
+      this.$hamburgerProgram = document.querySelector('.navigation__mobile .program');
     },
     addEventListeners() {
       this.$hamburger.addEventListener('click', () => {
@@ -19,6 +18,7 @@
         document.body.classList.toggle('no-scroll');
       });
       this.$hamburgerProgram.addEventListener('click', (ev) => {
+        console.log('e');
         this.$hamburgerProgram.classList.toggle('close');
       });
     },
