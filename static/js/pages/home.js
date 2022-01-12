@@ -3,15 +3,12 @@
     initialize() {
       this.GhentApi = new GhentApi();
       this.cacheElements();
-      this.generateUI();
       this.fetchEvents();
       this.fetchNews();
     },
     cacheElements() {
       this.$events = document.querySelector('#events');
       this.$news = document.querySelector('#news');
-    },
-    generateUI() {
     },
     async fetchEvents() {
       this.events = await this.GhentApi.getEvents();

@@ -28,6 +28,7 @@
     <meta content="#da532c" name="msapplication-TileColor">
     <meta content="static/media/images/favicons/browserconfig.xml" name="msapplication-config">
     <meta content="#ffffff" name="theme-color">
+    <link href="../static/css/main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -159,7 +160,7 @@
     </section>
     <section class="days short-version x">
         <ul>
-            <li id="day_19">
+            <li class="active" id="day_19">
                 <a class="x" href="events/day.html?day=19">
                     <span class="header__days__day">Vr</span>
                     <span class="header__days__date">19 Jul</span>
@@ -224,6 +225,34 @@
 </header>
 
 <main>
+    <section class="container days-menu">
+        <div class="selection-menu">
+            <h3>Bekijk:</h3>
+            <ul class="selection-menu-items">
+                <li>
+                    <button class="category">Categorie</button>
+                </li>
+                <li>
+                    <button class="organizer">Organisatoren</button>
+                </li>
+                <li>
+                    <button class="live">Nu live</button>
+                </li>
+                <li>
+                    <button class="children">Kinderen</button>
+                </li>
+                <li>
+                    <input id="look_wa" type="checkbox">
+                    <label class="look_wa" for="look_wa">Wheelchair Accessible</label>
+                </li>
+                <li>
+                    <input id="look_free" type="checkbox">
+                    <label for="look_free">Gratis</label>
+                </li>
+            </ul>
+        </div>
+        <div class="days-menu_body">HEHEHEHEHEHEHE</div>
+    </section>
 </main>
 
 <footer>

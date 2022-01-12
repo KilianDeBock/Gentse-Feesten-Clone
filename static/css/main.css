@@ -187,11 +187,138 @@ img {
     background-color: var(--color-black-900);
 }
 
+.days-menu {
+    display: flex;
+    gap: 1rem;
+}
+
+@media (min-width: 65rem) {
+    .days-menu {
+        gap: 3rem
+    }
+}
+
+@media (max-width: 65rem) {
+    .selection-menu h3 {
+        font-size: 0;
+    }
+}
+
+.selection-menu-items {
+    min-width: 4rem;
+    list-style: none;
+}
+
+.selection-menu-items * {
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+}
+
+.selection-menu-items li {
+    margin-bottom: 1rem;
+}
+
+.selection-menu-items button {
+    font-size: 0;
+    display: inline-block;
+    width: 3.2rem;
+    height: 3rem;
+    padding: .5rem;
+    border: .2rem solid var(--color-black-900);
+    background-color: var(--color-white-100);
+}
+
+@media (min-width: 65rem) {
+    .selection-menu-items button {
+        font-size: 1rem;
+        font-weight: bold;
+        display: block;
+        width: auto;
+        padding-left: 2.5rem;
+    }
+}
+
+.selection-menu-items button:hover {
+    color: var(--color-white-100);
+    background-color: var(--color-black-900);
+}
+
+.selection-menu-items * {
+    position: relative;
+}
+
+.selection-menu-items *::before {
+    font-family: "gf-icons", serif;
+    font-size: 1.8rem;
+    font-weight: normal;
+    position: absolute;
+    bottom: .35rem;
+    left: .5rem;
+}
+
+.selection-menu-items .look_wa {
+    font-size: .7rem;
+    position: relative;
+    display: inline-block;
+    max-width: 0;
+    padding-left: 2rem;
+    white-space: nowrap;
+    color: transparent;
+}
+
+@media (min-width: 65rem) {
+    .selection-menu-items .look_wa {
+        font-size: .7rem;
+        max-width: 100%;
+    }
+
+    .selection-menu-items .look_wa:hover {
+        color: var(--color-black-900);
+    }
+}
+
+.selection-menu-items .look_wa::before {
+    top: -.5rem;
+    left: -.2rem;
+    content: "";
+    color: var(--color-black-900);
+}
+
+.selection-menu-items .children::before {
+    content: "";
+}
+
+.selection-menu-items .category::before {
+    content: "";
+}
+
+.selection-menu-items .live::before {
+    content: "";
+}
+
+.selection-menu-items .organizer::before {
+    content: "";
+}
+
+.days-menu_body {
+    flex-grow: 1;
+    width: 40rem;
+    max-width: 100%;
+    padding: 3rem;
+    word-break: break-word;
+    color: var(--color-white-100);
+    background-color: var(--color-black-900);
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
     width: .3rem;
 }
 
 ::-webkit-scrollbar-thumb {
+    background: var(--color-black-900);
+}
+
+::selection {
+    color: var(--color-white-100);
     background: var(--color-black-900);
 }
