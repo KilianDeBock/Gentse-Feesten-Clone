@@ -1,6 +1,4 @@
 /* Header */
-
-
 @media (min-width: 65rem) {
     header {
         display: flex;
@@ -191,20 +189,20 @@ header .logo {
     color: var(--color-white-100);
 }
 
-.main-navigation .underline {
+.main-navigation li::after {
     display: block;
     width: 0;
     height: .2rem;
     margin: .4rem auto 0;
+    content: "";
     transition: background-color .2s ease-in-out, width .2s ease-in-out;
 }
 
-.main-navigation li:hover .underline,
-.main-navigation .underline.active {
+.main-navigation li:hover::after,
+.main-navigation li.active::after {
     width: 2rem;
     background-color: var(--color-white-100);
 }
-
 
 /* Header: Find */
 header .find {
@@ -348,11 +346,13 @@ header .days li {
     }
 }
 
-header .days li:hover {
+header .days li:hover,
+header .days li.active {
     background-color: var(--color-white-100);
 }
 
-header .days li:hover a {
+header .days li:hover a,
+header .days li.active a {
     color: var(--color-black-900);
 }
 
@@ -434,6 +434,12 @@ footer {
     background-size: cover;
 }
 
+@media (min-width: 65rem) {
+    footer {
+        background-position: calc(40% + 25rem) center;
+    }
+}
+
 footer .logo {
     width: 20rem;
     max-width: 100%;
@@ -449,6 +455,7 @@ footer .content h4 {
     font-size: 1.4rem;
     font-weight: bold;
     width: 25rem;
+    max-width: 100%;
 }
 
 footer .socials {
