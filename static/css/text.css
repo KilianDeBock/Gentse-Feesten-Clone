@@ -53,10 +53,15 @@
 }
 
 /* Defaults */
-body,
-button {
+body {
     font-family: "Raleway", Helvetica, Arial, sans-serif;
     color: var(--color-black-900);
+}
+
+input,
+button,
+label {
+    font: inherit;
 }
 
 /* Text */
