@@ -13,7 +13,7 @@
       this.cacheElements();
       this.addEventListeners();
       this.setActiveDay();
-      this.fetchCategories();
+      // this.fetchCategories();
     },
     cacheElements() {
       this.$days = document.querySelectorAll('header .days li');
