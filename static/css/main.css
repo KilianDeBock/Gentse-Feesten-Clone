@@ -241,15 +241,6 @@ img {
     background-color: var(--color-white-100);
 }
 
-@media (min-width: 20rem) and (max-width: 65rem) {
-    .selection-menu-items button {
-        font-size: 0;
-        display: inline-block;
-        width: 3.2rem;
-        height: 3rem;
-    }
-}
-
 .selection-menu-items button:hover {
     color: var(--color-white-100);
     background-color: var(--color-black-900);
@@ -260,8 +251,21 @@ img {
     font-size: 1.8rem;
     font-weight: normal;
     position: absolute;
-    bottom: .35rem;
+    bottom: .6rem;
     left: .5rem;
+}
+
+@media (min-width: 20rem) and (max-width: 65rem) {
+    .selection-menu-items button {
+        font-size: 0;
+        display: inline-block;
+        width: 3.2rem;
+        height: 3rem;
+    }
+
+    .selection-menu-items *::before {
+        left: .75rem;
+    }
 }
 
 .selection-menu-items .look_wa {
