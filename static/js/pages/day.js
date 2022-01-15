@@ -8,12 +8,11 @@
 
       // Create new instance of the Ghent API
       this.GhentApi = new GhentApi();
-      this.currentStyle = 'day_style_grid';
 
       this.cacheElements();
       this.addEventListeners();
       this.setActiveDay();
-      // this.fetchCategories();
+      this.fetchCategories();
     },
     cacheElements() {
       this.$days = document.querySelectorAll('header .days li');
@@ -24,8 +23,7 @@
     },
     addEventListeners() {
       this.$dayStyles.addEventListener('click', (ev) => {
-        if (ev.target.id !== this.currentStyle) {
-          this.currentStyle = ev.target.id;
+        if (!ev.target.classList.contains('active') && ev.target.id) {
           this.$events.classList.toggle('list_style');
           this.$dayStyleGrid.classList.toggle('active');
           this.$dayStyleList.classList.toggle('active');
