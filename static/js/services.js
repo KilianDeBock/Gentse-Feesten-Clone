@@ -3,7 +3,7 @@ const GHENT_BASE_URL = 'https://www.pgm.gent/data/gentsefeesten';
 function GhentApi() {
   this.getEvents = async () => {
     try {
-      const response = await fetch(`${GHENT_BASE_URL}/events_500.json`);
+      const response = await fetch(`${GHENT_BASE_URL}/events.json`);
       return await response.json();
     } catch (error) {
       console.log('An error occurred!', error);

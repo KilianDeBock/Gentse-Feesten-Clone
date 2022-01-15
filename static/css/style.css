@@ -76,3 +76,7 @@ footer .container {
 .arrow.arrow-left:hover {
     transform: rotate(190deg) translateX(.5rem);
 }
+
+.flex {
+    display: flex;
+}

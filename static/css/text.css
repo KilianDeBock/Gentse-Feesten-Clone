@@ -1,6 +1,7 @@
 @font-face {
     font-family: "gf-icons";
     src: url("../fonts/gf-icons.woff") format("woff");
+    font-weight: 100;
 }
 
 @font-face {
@@ -123,4 +124,8 @@ a:hover:not(.x) {
 
 .txt__bold-black {
     font-weight: 900;
+}
+
+.txt__center {
+    text-align: center;
 }
