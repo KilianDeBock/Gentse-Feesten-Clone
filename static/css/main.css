@@ -504,6 +504,29 @@ img {
 }
 
 
+/* Details styling */
+
+.event-content__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem
+}
+
+.event-content__wrapper > * {
+    flex-grow: 1;
+    width: 20rem;
+    max-width: 100%;
+}
+
+#event-content .event__location::before {
+    font-size: 1.2rem;
+    position: relative;
+    top: .2rem;
+    margin-right: .5rem;
+    content: "";
+}
+
+
 /* Scrollbar */
 
 ::-webkit-scrollbar {

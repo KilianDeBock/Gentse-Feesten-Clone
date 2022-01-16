@@ -1,7 +1,7 @@
 @font-face {
     font-family: "gf-icons";
     src: url("../fonts/gf-icons.woff") format("woff");
-    font-weight: 100;
+    font-weight: 100 !important;
 }
 
 @font-face {
@@ -49,8 +49,25 @@
     font-style: italic;
 }
 
-.icon {
+.icon,
+h1.icon,
+h2.icon,
+h3.icon,
+h4.icon,
+div.icon,
+span.icon,
+label.icon,
+button.icon,
+.icon__after > *,
+.icon__after_all *,
+.icon__pseudo::after,
+.icon__pseudo::before,
+.icon__pseudo_after > *::after,
+.icon__pseudo_after > *::before,
+.icon__pseudo_after_all *::after,
+.icon__pseudo_after_all *::before {
     font-family: "gf-icons";
+    font-weight: 100;
 }
 
 /* Defaults */
@@ -118,6 +135,10 @@ a:hover:not(.x) {
 }
 
 /* Settings */
+.txt__box {
+    display: block;
+}
+
 .txt__bold {
     font-weight: bold;
 }

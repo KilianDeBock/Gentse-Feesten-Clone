@@ -62,7 +62,9 @@
     },
     async fetchCategories() {
       this.categories = await this.GhentApi.getCategories();
+      this.$dayMenuButtons[0].classList.add('active');
       this.setCategories();
+
       this.fetchEvents();
     },
     setCategories() {
@@ -70,18 +72,6 @@
         <li>
           <a class="x" href="events/day.html#${c}">${c}</a>
         </li>`).join('');
-      this.$dayMenuButtons[0].classList.toggle('active');
-    },
-    async fetchEvents() {
-      this.allEvents = await this.GhentApi.getEvents();
-      this.allEvents.sort((a, b) => a.sort_key - b.sort_key);
-      this.getEvents();
-    },
-    getEvents() {
-      this.events = this.allEvents.filter(e => e.day === this.setDay);
-      this.eventsPerCategorie = {};
-      this.categories.forEach(c => this.eventsPerCategorie[c] = this.events.filter(e => e.category.includes(c)));
-      this.setEvents();
     },
     setOrganizers() {
       this.organizers = [
@@ -98,6 +88,17 @@
         <li>
           <a class="x" href="events/day.html#${o}">${o}</a>                
         </li>`).join('');
+    },
+    async fetchEvents() {
+      this.allEvents = await this.GhentApi.getEvents();
+      this.allEvents.sort((a, b) => a.sort_key - b.sort_key);
+      this.getEvents();
+    },
+    getEvents() {
+      this.events = this.allEvents.filter(e => e.day === this.setDay);
+      this.eventsPerCategorie = {};
+      this.categories.forEach(c => this.eventsPerCategorie[c] = this.events.filter(e => e.category.includes(c)));
+      this.setEvents();
     },
     setEvents() {
       // Get html for events.
