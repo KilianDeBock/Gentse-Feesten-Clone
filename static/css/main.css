@@ -6,6 +6,9 @@
     --color-gray-200: #e9e9e9;
 }
 
+
+/* default styling */
+
 * {
     box-sizing: border-box; margin: 0;
     padding: 0;
@@ -21,6 +24,9 @@ img {
     max-width: 100%;
 }
 
+
+/* Events styling */
+
 #events {
     display: flex;
     flex-wrap: wrap;
@@ -34,6 +40,9 @@ img {
     width: 19rem;
     max-width: 100%;
 }
+
+
+/* events and day events styling */
 
 #events img,
 #day__events:not(.list_style) img {
@@ -61,6 +70,9 @@ img {
     color: var(--color-white-100);
     background-color: var(--color-black-900);
 }
+
+
+/* News items styling */
 
 #news {
     list-style: none;
@@ -139,6 +151,9 @@ img {
     background-color: var(--color-black-900);
 }
 
+
+/* Highlights styling */
+
 #highlights {
     position: relative;
 }
@@ -160,6 +175,9 @@ img {
     top: .15rem;
     margin-right: 1rem;
 }
+
+
+/* Stay in touch styling */
 
 #stay-in-touch {
     padding-top: 1.5rem;
@@ -192,6 +210,9 @@ img {
     background-color: var(--color-black-900);
 }
 
+
+/* Days menu styling */
+
 @media (min-width: 20rem) {
     .days-menu {
         display: flex;
@@ -204,6 +225,9 @@ img {
         gap: 3rem
     }
 }
+
+
+/* Selection menu styling */
 
 @media (max-width: 65rem) and (min-width: 20rem) {
     .selection-menu h3 {
@@ -241,13 +265,14 @@ img {
     background-color: var(--color-white-100);
 }
 
-.selection-menu-items button:hover {
+.selection-menu-items button:hover,
+.selection-menu-items button.active {
     color: var(--color-white-100);
     background-color: var(--color-black-900);
 }
 
 .selection-menu-items *::before {
-    font-family: "gf-icons", serif;
+    font-family: "gf-icons";
     font-size: 1.8rem;
     font-weight: normal;
     position: absolute;
@@ -277,13 +302,19 @@ img {
     color: transparent;
 }
 
+.selection-menu-items .look_wa span {
+    position: relative;
+    top: .2rem
+}
+
+
 @media (min-width: 65rem) {
     .selection-menu-items .look_wa {
         font-size: .7rem;
         max-width: 100%;
     }
 
-    .selection-menu-items .look_wa:hover {
+    .selection-menu-items .look_wa:hover span {
         color: var(--color-black-900);
     }
 }
@@ -296,31 +327,60 @@ img {
     color: var(--color-black-900);
 }
 
-.selection-menu-items .children::before {
+.selection-menu-items #children::before {
     content: "";
 }
 
-.selection-menu-items .category::before {
+.selection-menu-items #category::before {
     content: "";
 }
 
-.selection-menu-items .live::before {
+.selection-menu-items #live::before {
     content: "";
 }
 
-.selection-menu-items .organizer::before {
+.selection-menu-items #organizer::before {
     content: "";
 }
 
 .days-menu_body {
+    display: flex;
+    align-content: flex-start;
     flex-grow: 1;
+    flex-wrap: wrap;
     width: 40rem;
     max-width: 100%;
     padding: 3rem;
+    list-style: none;
     word-break: break-word;
     color: var(--color-white-100);
     background-color: var(--color-black-900);
+    gap: 1rem;
 }
+
+.days-menu_body > * {
+    flex-grow: 1;
+    width: 100%;
+}
+
+@media (min-width: 50rem) {
+    .days-menu_body > * {
+        flex-grow: 1;
+        width: 40%;
+    }
+}
+
+.days-menu_body a.x {
+    font-weight: bold;
+    color: var(--color-white-100);
+}
+
+.days-menu_body a.x:hover {
+    text-decoration: underline;
+}
+
+
+/* Styling of days filter */
 
 .day_styles {
     display: flex;
@@ -350,6 +410,9 @@ img {
 #day_style_list:after {
     content: "";
 }
+
+
+/* Styling of days lineup */
 
 #day__events {
     display: flex;
@@ -403,10 +466,6 @@ img {
     color: var(--color-gray-800)
 }
 
-#day__events.list_style {
-    /* display: flex; */
-}
-
 #day__events.list_style img {
     display: none;
 }
@@ -444,7 +503,9 @@ img {
     max-width: 100%;
 }
 
+
 /* Scrollbar */
+
 ::-webkit-scrollbar {
     width: .3rem;
 }

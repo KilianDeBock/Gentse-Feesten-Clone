@@ -18,6 +18,9 @@
       this.$days = document.querySelectorAll('header .days li');
       this.$events = document.querySelector('#day__events');
       this.$dayStyles = document.querySelector('.day_styles');
+      this.$dayMenuBody = document.querySelector('.days-menu_body');
+      this.$dayMenuItems = document.querySelector('.selection-menu-items');
+      this.$dayMenuButtons = document.querySelectorAll('.selection-menu-items button');
       this.$dayStyleGrid = document.querySelector('#day_style_grid');
       this.$dayStyleList = document.querySelector('#day_style_list');
     },
@@ -27,6 +30,25 @@
           this.$events.classList.toggle('list_style');
           this.$dayStyleGrid.classList.toggle('active');
           this.$dayStyleList.classList.toggle('active');
+        }
+      });
+
+      this.$dayMenuItems.addEventListener('click', (ev) => {
+        if (!ev.target.classList.contains('active') && ev.target.nodeName === 'BUTTON') {
+          this.$dayMenuButtons.forEach(button => {
+            if (button.classList.contains('active')) button.classList.toggle('active');
+          });
+          ev.target.classList.toggle('active');
+          switch (ev.target.id) {
+            case 'category':
+              this.setCategories();
+              break;
+            case 'organizer':
+              this.setOrganizers();
+              break;
+            default:
+              this.$dayMenuBody.innerHTML = '<span class="txt__bold">Not yet implemented :D</span>';
+          }
         }
       });
     },
@@ -40,7 +62,15 @@
     },
     async fetchCategories() {
       this.categories = await this.GhentApi.getCategories();
+      this.setCategories();
       this.fetchEvents();
+    },
+    setCategories() {
+      this.$dayMenuBody.innerHTML = this.categories.map(c => `
+        <li>
+          <a class="x" href="events/day.html#${c}">${c}</a>
+        </li>`).join('');
+      this.$dayMenuButtons[0].classList.toggle('active');
     },
     async fetchEvents() {
       this.allEvents = await this.GhentApi.getEvents();
@@ -52,6 +82,22 @@
       this.eventsPerCategorie = {};
       this.categories.forEach(c => this.eventsPerCategorie[c] = this.events.filter(e => e.category.includes(c)));
       this.setEvents();
+    },
+    setOrganizers() {
+      this.organizers = [
+        'Camping Vlasmarkt',
+        'cirQ Chataclan',
+        'Groentenmarkt',
+        'Korenmarkt',
+        'Luisterplein',
+        'Sint-Veerleplein',
+        'Trefpunt',
+        'Andere activiteiten'
+      ];
+      this.$dayMenuBody.innerHTML = this.organizers.map(o => `
+        <li>
+          <a class="x" href="events/day.html#${o}">${o}</a>                
+        </li>`).join('');
     },
     setEvents() {
       // Get html for events.
@@ -80,7 +126,7 @@
 
         // Return name + data.
         return `
-        <li>
+        <li id="${c}">
             <span class="flex">
                 <h3>${c}</h3>
                 <a class="x icon days_category__arrow-up" href="events/day.html#home"></a>
