@@ -3,23 +3,32 @@
     initialize() {
       // Create new url object
       this.url = new URL(document.URL);
-      // // Get the day, or set default value.
+      // Get the day, or set default value.
+      this.setDay = this.url.searchParams.get('day') ?? '19';
+      // // Get the event, or set default value.
       this.urlEvent = this.url.searchParams.get('event') ?? null;
 
       // Create new instance of the Ghent API
       this.GhentApi = new GhentApi();
 
       this.cacheElements();
-      this.addEventListeners();
       this.fetchEvents();
     },
     cacheElements() {
+      this.$days = document.querySelectorAll('header .days li');
       this.$elements = document.querySelectorAll('selector');
       this.$title = document.querySelector('title');
       this.$eventContent = document.querySelector('#event-content');
-      this.$eventOrganiser = document.querySelector('#event-organiser');
+      this.$otherEvents = document.querySelector('#other-events');
     },
-    addEventListeners() {
+    setActiveDay() {
+      this.setDay = this.currentEvent.day;
+      this.$days.forEach(day => {
+        day.classList.remove('active');
+        if (day.id === `day_${this.setDay}`) {
+          day.classList.add('active');
+        }
+      });
     },
     setTitle() {
       this.$title.innerText = `${this.currentEvent?.title ?? 'Details'} | Gentse Feesten 2019`;
@@ -31,7 +40,6 @@
     },
     getEvent() {
       this.currentEvent = this.allEvents.find(e => e.slug === this.urlEvent);
-      this.setTitle();
       this.checkEvent();
     },
     checkEvent() {
@@ -42,24 +50,37 @@
         </div>`;
       if (!this.currentEvent) return this.$eventContent.innerHTML = errorMsg;
 
-      const c = this.currentEvent,
+      this.setTitle();
+      this.setActiveDay();
+      this.setEvent();
+      this.setOtherEvents();
+    },
+    setEvent() {
+      const event = this.currentEvent,
         checks = {
-          url: c.url ?? null,
-          slug: c.slug ?? null,
-          img: c.image?.full ?? null,
-          ageMatch: c.title.match('\\(([0-9])\\+\\)') ?? null,
+          url: event.url ?? null,
+          slug: event.slug ?? null,
+          img: event.image?.full ?? null,
+          ageMatch: event.title.match('\\(([0-9])\\+\\)') ?? null,
         },
         content = {
-          website: checks.url ? `<div>${checks.url}</div>` : '',
-          age: checks.ageMatch ? `<span>Age: ${checks.ageMatch[1]}+</span>` : '',
-          image: checks.img ? `<img src="${checks.img}" alt="${checks.slug}" loading="lazy">` : ''
+          website: checks.url ? `
+            <li class="listing">
+              <span class="title">Website:</span>
+              <span><a class="value">${checks.url}</a></span>
+            </li>` : '',
+          age: checks.ageMatch ? `
+            <li class="listing">
+              <span class="title">Leeftijd:</span> 
+              <span class="value">${checks.ageMatch[1]}+</span>
+            </li>` : '',
+          image: checks.img ? `<div class="details__image__wrapper"><img src="${checks.img}" alt="${checks.slug}" loading="lazy"></div>` : '',
+          accessible: event.wheelchair_accessible ? `
+            <li>
+              <span class="accessible icon__pseudo">Wheelchair Accessible</span>
+            </li>` : ''
         };
-      console.log(checks);
-      console.log(content);
-      this.setEvent(content);
-    },
-    setEvent(content) {
-      const event = this.currentEvent;
+
       this.$eventContent.innerHTML = `
         <section>
           <h1>${event.title}</h1>
@@ -68,11 +89,46 @@
         </section>
         <section class="event-content__wrapper">
           ${content.image}
-          <div>
-            <p>${event.description}</p>
-          </div>
+          <ul class="details__content">
+            <li>
+              <p>${event.description}</p>
+            </li>
+            ${content.website}
+            <li class="listing">
+              <span class="title">Organisator:</span> 
+              <span class="value">${event.organizer}</span>
+            </li>
+            <li class="listing">
+              <span class="title">Categorieën:</span> 
+              <span class="value">${event.category.map(c => `
+                <span class="txt__box">
+                    <a href="events/day.html?day=${this.setDay}#${c}">${c}</a>
+                </span>`).join('')}
+              </span>
+            </li>
+            ${content.age}
+            ${content.accessible}
+          </ul>
         </section>
         <div class="title"></div>`;
+    },
+    setOtherEvents() {
+      const organizeEvents = this.allEvents.filter(e => e.organizer === this.currentEvent.organizer);
+      console.log(organizeEvents);
+      if (!organizeEvents.length) return;
+      const otherEventsFromOrganiser = organizeEvents.map(e => `
+        <li class="details-list__item" id="${e.id}">
+          <a class="x" href="events/detail.html?day=${e.day}&event=${e.slug}">
+            <div class="details__wrapper">
+              <span class="details__date txt__bold">${e.start} u.</span>
+              <h4>${e.title}</h4>
+              <span class="details__location">${e.location}</span>
+            </div>
+          </a>
+        </li>`).join('');
+      this.$otherEvents.innerHTML = `
+        <h3>Andere evenementen van ${this.currentEvent.organizer}</h3>
+        <ul class="details-list">${otherEventsFromOrganiser}</ul>`;
     }
   };
   // Start initialization.

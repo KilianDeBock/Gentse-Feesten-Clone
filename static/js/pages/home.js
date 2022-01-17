@@ -1,59 +1,22 @@
 (() => {
   const home = {
     initialize() {
+      // Create new instance of the Ghent API
       this.GhentApi = new GhentApi();
+
       this.cacheElements();
-      this.fetchEvents();
       this.fetchNews();
     },
     cacheElements() {
-      this.$events = document.querySelector('#events');
       this.$news = document.querySelector('#news');
-    },
-    async fetchEvents() {
-      this.events = await this.GhentApi.getEvents();
-      this.getRandomEvents();
-    },
-    getRandomEvents() {
-      this.eventsWithImages = this.events.filter(ev => ev.image);
-      this.randomEvents = [];
-
-      for (let i = 0; i < 3; i++) {
-        const randomEvent = this.eventsWithImages[Math.floor(Math.random() * this.eventsWithImages.length)];
-        this.randomEvents.push(randomEvent);
-      }
-
-      const randomUniqueEventsIds = [...new Set(this.randomEvents.map(ev => ev.id))];
-
-      randomUniqueEventsIds.length < 3 ? this.getRandomEvents() : this.setRandomEvents();
-    },
-    setRandomEvents() {
-      this.$events.innerHTML = this.randomEvents.map(event => `
-        <li>
-          <a class="x" href="events/detail.html?day=${event.day}&event=${event.slug}">
-            <img src="${event.image.thumb}" loading="lazy" alt="Thumpnail of ${event.slug}">
-            <div class="events__wrapper">
-              <span class="events__date">
-                <span class="txt__bold">
-                  ${event.day_of_week.substring(0, 2)}
-                  ${event.day} Jul
-                </span>
-                ${event.start} u.
-              </span>
-              <h4>${event.title}</h4>
-              <span class="event__location">${event.location}</span>
-            </div>
-          </a>
-        </li>
-      `).join('');
     },
     async fetchNews() {
       this.news = await this.GhentApi.getNews();
       this.setNews();
     },
     setNews() {
-      console.log(this.news);
-      this.$news.innerHTML = this.news.map(news => {
+      const highlights = this.news.slice(0, 3);
+      this.$news.innerHTML = highlights.map(news => {
         // Get Date object with the publishedAt epoch time.
         const dateObject = new Date(news.publishedAt);
 

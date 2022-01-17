@@ -303,10 +303,14 @@ header .find .svg_find-out {
 
 header .language-selector {
     height: 2.5rem;
-    padding: .8rem;
+    padding: .8rem 0 .8rem;
     color: white;
     border: none;
-    background-color: black;
+    background-color: transparent;
+}
+
+header .language-selector option {
+    background-color: var(--color-black-900);
 }
 
 .btn_search {

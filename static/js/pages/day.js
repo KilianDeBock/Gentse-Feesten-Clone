@@ -70,7 +70,7 @@
     setCategories() {
       this.$dayMenuBody.innerHTML = this.categories.map(c => `
         <li>
-          <a class="x" href="events/day.html#${c}">${c}</a>
+          <a class="x" href="events/day.html?day=${this.setDay}#${c}">${c}</a>
         </li>`).join('');
     },
     setOrganizers() {
@@ -86,7 +86,7 @@
       ];
       this.$dayMenuBody.innerHTML = this.organizers.map(o => `
         <li>
-          <a class="x" href="events/day.html#${o}">${o}</a>                
+          <a class="x" href="events/day.html?day=${this.setDay}#${o}">${o}</a>                
         </li>`).join('');
     },
     async fetchEvents() {
