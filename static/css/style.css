@@ -81,3 +81,10 @@ footer .container {
     display: flex;
 }
 
+.space__above_2 {
+    margin-top: 2rem;
+}
+
+.space__above_6 {
+    margin-top: 6rem;
+}

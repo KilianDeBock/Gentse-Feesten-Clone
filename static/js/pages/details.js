@@ -5,7 +5,7 @@
       this.url = new URL(document.URL);
       // Get the day, or set default value.
       this.setDay = this.url.searchParams.get('day') ?? '19';
-      // // Get the event, or set default value.
+      // Get the event, or set default value.
       this.urlEvent = this.url.searchParams.get('event') ?? null;
 
       // Create new instance of the Ghent API
@@ -113,10 +113,11 @@
         <div class="title"></div>`;
     },
     setOtherEvents() {
-      const organizeEvents = this.allEvents.filter(e => e.organizer === this.currentEvent.organizer);
-      console.log(organizeEvents);
-      if (!organizeEvents.length) return;
-      const otherEventsFromOrganiser = organizeEvents.map(e => `
+      const organizerEvents = this.allEvents.filter(e => e.organizer === this.currentEvent.organizer);
+      const organizerEventsLimit = organizerEvents.slice(0, 4);
+      if (!organizerEventsLimit.length) return;
+
+      const otherEventsFromOrganiser = organizerEventsLimit.map(e => `
         <li class="details-list__item" id="${e.id}">
           <a class="x" href="events/detail.html?day=${e.day}&event=${e.slug}">
             <div class="details__wrapper">
@@ -125,10 +126,13 @@
               <span class="details__location">${e.location}</span>
             </div>
           </a>
-        </li>`).join('');
+        </li>`).join(''),
+        moreEvents = organizerEvents.length > 4 ? `<button class="details__more space__above_2">Alle evenementen van deze organisator</button>` : '';
+
       this.$otherEvents.innerHTML = `
-        <h3>Andere evenementen van ${this.currentEvent.organizer}</h3>
-        <ul class="details-list">${otherEventsFromOrganiser}</ul>`;
+        <h3 class="space__above_6">Andere evenementen van ${this.currentEvent.organizer}</h3>
+        <ul class="details-list">${otherEventsFromOrganiser}</ul>
+        ${moreEvents}`;
     }
   };
   // Start initialization.

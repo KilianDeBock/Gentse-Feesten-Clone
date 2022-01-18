@@ -16,7 +16,6 @@
     <!-- Javascript -->
     <script defer src="static/js/services.js"></script>
     <script defer src="static/js/main.js"></script>
-    <script defer src="static/js/pages/home.js"></script>
     <!-- Favicons -->
     <link href="static/media/images/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
     <link href="static/media/images/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
@@ -109,7 +108,7 @@
         </div>
         <div class="navigation__desktop">
             <div class="header_group">
-                <form class="search-form">
+                <form action="events/search.html" class="search-form" method="get">
                     <input class="search_input" name="search" placeholder="Doorzoek het programma..." type="search">
                     <button class="btn_search"></button>
                 </form>
@@ -122,19 +121,15 @@
                 <ul>
                     <li class="active">
                         <a class="x main-navigation__item" href="index.html">Home</a>
-                        <span class="underline"></span>
                     </li>
                     <li>
                         <a class="x main-navigation__item" href="events/day.html">Programma</a>
-                        <span class="underline"></span>
                     </li>
                     <li>
                         <a class="x main-navigation__item" href="news.html">Nieuws</a>
-                        <span class="underline"></span>
                     </li>
                     <li>
                         <a class="x main-navigation__item" href="https://gf20.qa.stad.gent/nl/info">Info</a>
-                        <span class="underline"></span>
                     </li>
                 </ul>
             </nav>

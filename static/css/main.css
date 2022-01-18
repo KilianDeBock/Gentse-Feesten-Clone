@@ -137,7 +137,8 @@ img {
     font-size: 1.9rem;
 }
 
-#news .news__more {
+#news .news__more,
+.details__more {
     font-weight: bold;
     display: inline-block;
     padding: 1rem 2rem;
@@ -146,7 +147,8 @@ img {
     background-color: var(--color-white-100);
 }
 
-#news .news__more:hover {
+#news .news__more:hover,
+.details__more:hover {
     color: var(--color-white-100);
     background-color: var(--color-black-900);
 }
@@ -497,13 +499,26 @@ img {
 }
 
 #day__events.list_style .day__events__items > *,
+.details-list > * {
+    border: 2px solid var(--color-black-900);
+}
+
+#day__events.list_style .day__events__items > *,
 #day__events.list_style .day__events__items a,
 .details-list > *,
-.details-list a,
 .details-list .details__wrapper {
     width: 100%;
+    transition: all .2s ease-in-out;
     color: var(--color-white-100);
     background-color: var(--color-black-900);
+}
+
+#day__events.list_style .day__events__items > *:hover,
+.details-list .details-list__item:hover,
+#day__events.list_style .day__events__items > *:hover a,
+.details-list .details-list__item:hover .details__wrapper {
+    color: var(--color-black-900);
+    background-color: var(--color-white-100);
 }
 
 #day__events.list_style .day__events__items > *,
@@ -552,6 +567,7 @@ img {
 #day__events.list_style .events__wrapper h4,
 .details-list .details__wrapper h4 {
     flex-grow: 1;
+    flex-shrink: 1;
     max-width: 100%;
 }
 
