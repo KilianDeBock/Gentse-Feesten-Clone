@@ -124,7 +124,7 @@
                     <li>
                         <a class="x main-navigation__item" href="index.html">Home</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a class="x main-navigation__item" href="events/day.html">Programma</a>
                     </li>
                     <li>
@@ -157,74 +157,19 @@
         </svg>
 
     </section>
-    <section class="days short-version x">
-        <ul>
-            <li class="active" id="day_19">
-                <a class="x" href="events/day.html?day=19">
-                    <span class="header__days__day">Vr</span>
-                    <span class="header__days__date">19 Jul</span>
-                </a>
-            </li>
-            <li id="day_20">
-                <a class="x" href="events/day.html?day=20">
-                    <span class="header__days__day">Za</span>
-                    <span class="header__days__date">20 Jul</span>
-                </a>
-            </li>
-            <li id="day_21">
-                <a class="x" href="events/day.html?day=21">
-                    <span class="header__days__day">Zo</span>
-                    <span class="header__days__date">21 Jul</span>
-                </a>
-            </li>
-            <li id="day_22">
-                <a class="x" href="events/day.html?day=22">
-                    <span class="header__days__day">Ma</span>
-                    <span class="header__days__date">22 Jul</span>
-                </a>
-            </li>
-            <li id="day_23">
-                <a class="x" href="events/day.html?day=23">
-                    <span class="header__days__day">Di</span>
-                    <span class="header__days__date">23 Jul</span>
-                </a>
-            </li>
-            <li id="day_24">
-                <a class="x" href="events/day.html?day=24">
-                    <span class="header__days__day">Wo</span>
-                    <span class="header__days__date">24 Jul</span>
-                </a>
-            </li>
-            <li id="day_25">
-                <a class="x" href="events/day.html?day=25">
-                    <span class="header__days__day">Do</span>
-                    <span class="header__days__date">25 Jul</span>
-                </a>
-            </li>
-            <li id="day_26">
-                <a class="x" href="events/day.html?day=26">
-                    <span class="header__days__day">Vr</span>
-                    <span class="header__days__date">26 Jul</span>
-                </a>
-            </li>
-            <li id="day_27">
-                <a class="x" href="events/day.html?day=27">
-                    <span class="header__days__day">Za</span>
-                    <span class="header__days__date">27 Jul</span>
-                </a>
-            </li>
-            <li id="day_28">
-                <a class="x" href="events/day.html?day=28">
-                    <span class="header__days__day">Zo</span>
-                    <span class="header__days__date">28 Jul</span>
-                </a>
-            </li>
-        </ul>
-    </section>
+    <div></div>
 </header>
 
 <main>
-    <ul class="container" id="search-body">
+    <form action="events/search.html" class="container search-form" method="get">
+        <input class="search_input" name="search" placeholder="Doorzoek het programma..." type="search">
+        <button class="btn_search"></button>
+    </form>
+    <div class="container day_styles">
+        <button class="icon active" id="day_style_grid"></button>
+        <button class="icon" id="day_style_list"></button>
+    </div>
+    <ul class="container search-items" id="search-body">
         <li>
             <h2 class="txt__center">Loading content, Please wait!</h2>
         </li>
