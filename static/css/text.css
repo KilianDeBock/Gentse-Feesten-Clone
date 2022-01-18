@@ -5,6 +5,12 @@
 }
 
 @font-face {
+    font-family: "gf-icons-backup";
+    src: url("../fonts/gf-icons-backup.woff") format("woff");
+    font-weight: 100 !important;
+}
+
+@font-face {
     font-family: "Raleway";
     src: url("../fonts/Raleway Regular.woff2") format("woff2"),
     url("../fonts/Raleway Regular.woff") format("woff");
@@ -66,8 +72,8 @@ button.icon,
 .icon__pseudo_after > *::before,
 .icon__pseudo_after_all *::after,
 .icon__pseudo_after_all *::before {
-    font-family: "gf-icons";
-    font-weight: 100;
+    font-family: "gf-icons", "gf-icons-backup";
+    font-weight: 100 !important;
 }
 
 /* Defaults */

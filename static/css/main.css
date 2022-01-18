@@ -273,9 +273,9 @@ img {
 }
 
 .selection-menu-items *::before {
-    font-family: "gf-icons";
+    font-family: "gf-icons", "gf-icons-backup";
     font-size: 1.8rem;
-    font-weight: normal;
+    font-weight: 100 !important;
     position: absolute;
     bottom: .6rem;
     left: .5rem;
@@ -453,9 +453,21 @@ img {
     cursor: pointer;
 }
 
-.day__events__items > *:nth-last-child(-n+2),
-.details-list > *:nth-last-child(-n+2) {
-    max-width: calc(65rem / 3 - 1rem);
+#day__events:not(.list_style) .day__events__items > *:last-child {
+    max-width: 100%;
+}
+
+@media (min-width: 43.2rem) {
+    #day__events:not(.list_style) .day__events__items > *:last-child {
+        max-width: calc(50vw - 1rem);
+    }
+}
+
+@media (min-width: 65rem) {
+    #day__events:not(.list_style) .day__events__items > *:nth-last-child(2),
+    #day__events:not(.list_style) .day__events__items > *:last-child {
+        max-width: calc(65rem / 3 - 1rem);
+    }
 }
 
 .day__events__items a,
