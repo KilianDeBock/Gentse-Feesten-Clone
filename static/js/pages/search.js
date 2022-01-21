@@ -16,6 +16,8 @@
       this.fetchEvents();
     },
     cacheElements() {
+      this.$searchBoxes = document.querySelectorAll('.search_input');
+      this.$searchBoxes.forEach(s => s.value = this.search);
       this.$searchBody = document.querySelector('#search-body');
       this.$dayStyles = document.querySelector('.day_styles');
       this.$dayStyleGrid = document.querySelector('#day_style_grid');
@@ -37,10 +39,10 @@
     },
     getEvents() {
       if (!this.search) return this.$searchBody.innerHTML = `
-        <div>
-          <h2 class="txt__center">Oopsy-dasy! No search was started!</h2>
-          <p class="txt__center">Try typing something into the search bar.</p>
-        </div>`;
+        <li class="x">
+          <h2 class="txt__center">Stilte...</h2>
+          <p class="txt__center">We hebben geen resultaat gevonden...<br>Probeer eens een zoekopdracht uit te voeren of op een dag te klikken!</p>
+        </li>`;
 
       // Most relevant searches first than add less relevant searches.
       const searches = {
@@ -78,10 +80,10 @@
 
       // Set error message
       const errorMsg = `
-        <div>
-          <h2 class="txt__center">Oh no! We did not find any data!</h2>
-          <p class="txt__center">Have you tried using/searching a day between 19 and 28?</p>
-        </div>`;
+        <li class="x">
+          <h2 class="txt__center">De uitkomst is ongeloofelijk...</h2>
+          <p class="txt__center">We hebben geen resultaat gevonden met: "${this.search}".<br>Probeer eens een andere zoekopdracht, die korter is. Of klik op een dag.</p>
+        </li>`;
 
       // Set html to needs.
       this.$searchBody.innerHTML = result === '' ? errorMsg : result;

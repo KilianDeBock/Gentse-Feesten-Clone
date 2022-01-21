@@ -1,5 +1,5 @@
 main .container,
-footer .container {
+footer .container:not(.x) {
     margin-top: 4rem;
 }
 
@@ -42,11 +42,11 @@ footer .container {
 
 .arrow:not(.arrow-left):hover,
 #news li:hover .arrow {
-    transform: rotate(-10deg) translateX(.5rem);
+    transform: rotate(-20deg);
 }
 
 .arrow.arrow-left:hover {
-    transform: rotate(190deg) translateX(.5rem);
+    transform: rotate(200deg);
 }
 
 .flex {

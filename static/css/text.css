@@ -1,13 +1,13 @@
 @font-face {
     font-family: "gf-icons";
     src: url("../fonts/gf-icons.woff") format("woff");
-    font-weight: 100 !important;
+    font-weight: 100;
 }
 
 @font-face {
     font-family: "gf-icons-backup";
     src: url("../fonts/gf-icons-backup.woff") format("woff");
-    font-weight: 100 !important;
+    font-weight: 100;
 }
 
 @font-face {
@@ -53,27 +53,6 @@
     url("../fonts/Raleway Black Italic.woff") format("woff");
     font-weight: 900;
     font-style: italic;
-}
-
-.icon,
-h1.icon,
-h2.icon,
-h3.icon,
-h4.icon,
-div.icon,
-span.icon,
-label.icon,
-button.icon,
-.icon__after > *,
-.icon__after_all *,
-.icon__pseudo::after,
-.icon__pseudo::before,
-.icon__pseudo_after > *::after,
-.icon__pseudo_after > *::before,
-.icon__pseudo_after_all *::after,
-.icon__pseudo_after_all *::before {
-    font-family: "gf-icons", "gf-icons-backup";
-    font-weight: 100 !important;
 }
 
 /* Defaults */
@@ -161,4 +140,25 @@ a:hover:not(.x) {
 
 .txt__center {
     text-align: center;
+}
+
+.icon,
+h1.icon,
+h2.icon,
+h3.icon,
+h4.icon,
+div.icon,
+span.icon,
+label.icon,
+button.icon,
+.icon__after > *,
+.icon__after_all *,
+.icon__pseudo::after,
+.icon__pseudo::before,
+.icon__pseudo_after > *::after,
+.icon__pseudo_after > *::before,
+.icon__pseudo_after_all *::after,
+.icon__pseudo_after_all *::before {
+    font-family: "gf-icons", "gf-icons-backup";
+    font-weight: 100;
 }
