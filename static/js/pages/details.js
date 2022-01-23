@@ -58,12 +58,17 @@
     setEvent() {
       const event = this.currentEvent,
         checks = {
+          description: event.description ?? null,
           url: event.url ?? null,
           slug: event.slug ?? null,
           img: event.image?.full ?? null,
           ageMatch: event.title.match('\\(([0-9])\\+\\)') ?? null,
         },
         content = {
+          description: checks.description ? `
+            <li>
+              <p>${checks.description}</p>
+            </li>` : '',
           website: checks.url ? `
             <li class="listing">
               <span class="title">Website:</span>
@@ -90,9 +95,7 @@
         <section class="event-content__wrapper">
           ${content.image}
           <ul class="details__content">
-            <li>
-              <p>${event.description}</p>
-            </li>
+            ${content.description}
             ${content.website}
             <li class="listing">
               <span class="title">Organisator:</span> 
